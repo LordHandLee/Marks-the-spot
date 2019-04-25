@@ -168,17 +168,6 @@ class ThreadedClient:
         Check every 200 ms if there is something new in the queue.
         """
         self.gui.processIncoming()
-        # if not self.running:
-        #     # This is the brutal stop of the system. You may want to do
-        #     # some cleanup before actually shutting it down.
-        #     import sys
-        #     sys.exit(1)
-        #
-        # if not self.running2:
-        #     import sys
-        #     sys.exit(1)
-
-
         self.master.after(200, self.periodicCall)
 
     def workerThread1(self):
